@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="./login.css" />
+</head>
+<body>
+  
+    <div class="div_top" >日常小修养护管理系统</div>
+    <div class="login">
+     
+        <div id="darkbannerwrap"></div>
+		 
+		<div id="darkbannerwrap"></div><input name="username" placeholder="用户名" id="userName"  type="text" >
+        <hr class="hr15">
+        <input name="password" placeholder="密码"  type="password" id="pass">
+        <hr class="hr15">
+        <input value="登录" style="width: 100%;" type="button" id="login_btn" onclick="Click()">
+        <hr class="hr20">
+    </div>
+</body>
+<script src="./page/js/jquery-2.2.0.min.js"></script>
+    <script src="./page/js/layer_v2.1/layer/layer.js"></script>
+    <script src="common.js"></script>
+    <script>
+        function Click(){
+            var user = $("#userName").val();
+            if(user == "决策人"){
+                window.location.href = 'html/index.html?num=0'
+            }else if(user == "user"){
+                window.location.href = 'html/index.html?num=1'
+            }else if(user == "非公安用户"){
+                window.location.href = 'html/index.html?num=2'
+            }else if(user == "管理员"){
+                window.location.href = 'html/index.html?num=3'
+            } else if (user == "admin") {
+                window.location.href = "page/index.html"  ;
+            }else{
+                alert("请输入正确的用户")
+            }
+					dataInit();
+        }
+		
+		
+		function dataInit(){
+			
+			var teacherList = [
+				{"id": "1","name":"张文","account":"zhangwen","pwd":"1"},
+				{"id": "2","name":"向国华","account":"xiangguohua","pwd":"1"},
+				{"id": "3","name":"李想","account":"lixiang","pwd":"1"},
+			];
+			localStorage.setItem("teacherList",JSON.stringify(teacherList));
+			
+			var stuList = [{"id": "1","name":"刘航","account":"liulang","pwd":"1"}];
+			var stuList = [{"id": "2","name":"刘嘉琦","account":"jiujiaqi","pwd":"1"}];
+			var stuList = [{"id": "3","name":"曾莹","account":"zengying","pwd":"1"}];
+			localStorage.setItem("stuList",JSON.stringify(stuList));
+			
+			var classList = [
+				{"id": "1","name":"初一1班","isPoint":"是"},
+				{"id": "2","name":"初一2班","isPoint":"否"},
+				{"id": "3","name":"初一3班","isPoint":"否"},
+				{"id": "4","name":"初二1班","isPoint":"是"},
+				{"id": "5","name":"初二3班","isPoint":"否"},
+				{"id": "6","name":"初三1班","isPoint":"是"},
+				{"id": "7","name":"初三2班","isPoint":"否"}
+			];
+			localStorage.setItem("classList",JSON.stringify(classList));
+			
+			
+			var cpuList = [
+				{"id": "1","name":"服务器（192.168.1.101）","isDie":"否"},
+				{"id": "2","name":"服务器（192.168.1.102）","isDie":"否"},
+				{"id": "3","name":"服务器（192.168.1.103）","isDie":"否"},
+				{"id": "4","name":"服务器（192.168.1.104）","isDie":"是"}
+			];
+			localStorage.setItem("cpuList",JSON.stringify(cpuList));
+			
+			var zyList = [
+				{"id": "1","name":"排序","des":"请用3种方法实现数组4,6,2,3,1的排序","zhipai":"初一1班","state":"未指派","handleState":"未处理","handleNote":"通过"}
+			];
+			console.log(JSON.stringify(zyList));
+			localStorage.setItem("zyList",JSON.stringify(zyList));
+		}			
+    </script>
+</html>

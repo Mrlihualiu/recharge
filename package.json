@@ -1,0 +1,16 @@
+{
+  "name": "recharge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-packager ./ notes --all --out ./OutApp --electron-version 9.0.0 --overwrite --icon=./src/asstes/images/logo.png"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.0"
+  }
+}

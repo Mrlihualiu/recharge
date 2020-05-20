@@ -1,0 +1,7 @@
+.ydwy-keyboard { position: absolute; width: auto; height: auto; overflow: hidden; text-align: center; border: 1px solid #d3d3d3; padding: 10px 5px; z-index: 10104460; display: none; }
+.ydwy-keyboard button { height: 50px; width: 35px; margin: 4px 1px; cursor: pointer; overflow: hidden; line-height: 24px; padding: 1px 6px; font-size: 24px; }
+.ydwy-keyboard .back, .ydwy-keyboard .enter, .ydwy-keyboard .close { width: 100px !important; }
+.ydwy-keyboard .space { width: 300px !important; } 
+.ydwy-keyboard .back, .ydwy-keyboard .enter, .ydwy-keyboard .close, .ydwy-keyboard .shift { border: 1px solid #003eff; background: #007fff; font-weight: normal; color: #ffffff; } 
+.ydwy-keyboard .keyboard-mask { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: #000; filter: alpha(opacity=30); background: rgba(0, 0, 0, .3); } 
+.ydwy-keyboard .ydwy-keyboard-button { width: 100%; position: relative; z-index: 10104460; }
