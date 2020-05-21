@@ -1,0 +1,35 @@
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, button, input, textarea, th, td, img, tr, td, form, select, div, strong, span, s {margin: 0px;
+padding: 0px;
+border: 0px;}
+table {padding: 0px;
+margin: 0px;}
+ul, ol {list-style: none;}
+a {text-decoration: none;}
+img {display: block;}
+a:focus {outline: none;}
+input, select, textarea {outline: none;}
+table {border-spacing: 0px;}
+html {overflow-x: hidden;}
+body {min-width: 1000px;
+font-family: "微软雅黑", "宋体";
+overflow: hidden;}
+@media only screen and (min-width: 320px) and (max-width: 1000px) {html {overflow-x: auto;}}
+.clear:after {content: "";
+display: block;
+clear: both;}
+.clear {Zoom: 1;}
+/*透明背景色兼容IE*/
+.opacity1 {background-color: rgba(0, 0, 0, .5);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000); /*黑色透明*/
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);}
+.opacity2 {background-color: rgba(223, 15, 26, 0.8) ;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ccDF0F1A, endColorstr=#ccDF0F1A); /*红色色透明*/}
+/*红色边框*/
+.borderRed:hover {border-color: #DD0220 !important;}
+@media only screen and (max-width: 3000px) and (min-width: 1921px) {body {font-size: 20px;}}
+@media only screen and (max-width: 1920px) and (min-width: 1661px) {body {font-size: 20px;}}
+@media only screen and (max-width: 1660px) and (min-width: 1441px) {body {font-size: 18px;}}
+@media only screen and (max-width: 1440px) and (min-width: 1367px) {body {font-size: 16px;}}
+@media only screen and (max-width: 1366px) and (min-width: 1281px) {body {font-size: 14px;}}
+@media only screen and (max-width: 1280px) and (min-width: 1023px) {body {font-size: 12px;}}
+@media only screen and (max-width: 1024px) and (min-width: 300px) {body {font-size: 12px;}}

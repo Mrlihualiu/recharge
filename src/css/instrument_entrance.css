@@ -1,0 +1,932 @@
+*{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+.div_free_use{
+    min-width: 1000px;
+    max-width: 1200px;
+    height: 140px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.div_free_use div{
+	display: block;
+    margin: 40px auto;
+    text-align: center;
+    width: 330px;
+    font-size: 16px;
+    line-height: 54px;
+}
+.div_free_use div a{
+	background:url(../img/button.png) no-repeat;
+	width:140px;
+	height: 45px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    background-position: 0px -250px;
+}
+.div_free_use div .touch1:hover{
+	background:url(../img/button.png) no-repeat;
+    background-position: 0px -200px;
+}
+.div_free_use div .touch2:hover{
+	background:url(../img/button.png) no-repeat;
+    background-position: 0px -350px;
+}
+.div_free_use div a .free_use_cursor{
+	display: block;
+	float: left;
+	width:30px;
+	height:40px;
+	margin-left: 15px;
+	background:url(../img/free_use_cursor.png) center center no-repeat;
+}
+.div_free_use div a:hover .free_use_cursor{
+	background:url(../img/free_use_cursor1.png) center center no-repeat;
+}
+.div_free_use div a .free_use_cont{
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size:16px;
+	margin-left:10px;
+	color:#FFFFFF;
+}.div_free_use div a:hover .free_use_cont{
+	color:#d81e06;
+}
+.div_seemore{
+    min-width: 1000px;
+    max-width: 1200px;
+    height: 140px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.div_seemore div{
+	display: block;
+    margin: 40px auto;
+    text-align: center;
+    width: 330px;
+    font-size: 16px;
+    line-height: 54px;
+}
+.div_seemore div a{
+	background:url(../img/button.png) no-repeat;
+	width:140px;
+	height: 45px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    background-position: 0px -250px;
+}
+.div_seemore div a:hover{
+	background:url(../img/button.png) no-repeat;
+    background-position: 0px -200px;
+    color:#d81e06;
+}
+.div_seemore div a .free_use_cont{
+	display: block;
+	width: 100%;
+	text-align: center;
+	float: left;
+	height: 42px;
+	line-height: 42px;
+	font-size:16px;
+	color:#FFFFFF;
+}
+.div_seemore div a:hover .free_use_cont{
+	color:#d81e06;
+}
+.current .currentBox .active{
+	color:#D11724;
+}
+
+/*-- 生产业务一体化 --start */
+.recr_td{
+    width:100%;
+    height:500px;
+}
+.recr_title{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.recr_title div{
+	width: 600px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #C60211;
+    margin: 0 auto;
+    position: relative;
+}
+.recr_title div strong {
+    font-weight: normal;
+    font-size: 26px;
+}
+.recr_td .box{
+    min-width: 1000px;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.div_bancont{
+	width:1000px;
+	height:70px;
+	line-height: 30px;
+	font-size: 26px;
+	text-align: center;
+	margin:0 auto;
+}
+/*-- 提交留言 --Start*/
+.send_mes{
+	width:1000px;
+	height: 520px;
+	margin:0 auto 50px;
+}
+.send_mes .send_form{
+	width:648px;
+	height: 518px;
+	float:left;
+	border:1px solid #e1e1e1;
+}
+.send_mes .send_bg{
+	width:349px;
+	height: 518px;
+	float:left;
+	border:1px solid #e1e1e1;
+	border-left: none;
+}
+#proTabDiv form{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+#proTabDiv form input,#proTabDiv form textarea{
+    font-family: "Microsoft Yahei", "微软雅黑";
+    position: absolute;
+    height: 46px;
+    font-size: 16px;
+    background: url(../img/userPro1.jpg) left center no-repeat;
+    width: 460px;
+    color: #777676;
+    left: 65px;
+    padding-left: 60px;
+    border: 1px solid #e1e1e1;
+    outline: none;
+}
+#proTabDiv form input{
+	line-height: 30px;
+    line-height: 46px\9;
+}
+#proTabDiv form textarea{
+    resize:none;
+    overflow: hidden;
+    line-height: 23px;
+    padding-top:7px;
+}
+#proTabDiv form.coFormC.selected{
+    display: block;
+}
+#proTabDiv form input.proCompan{
+     background: url('../img/fre_company.jpg') left center no-repeat;
+ }
+#proTabDiv form input.proPhone{
+    background: url('../img/fre_phone.jpg') left center no-repeat;
+}
+#proTabDiv form input.proSubm{
+    padding: 0;
+    background-image: none;
+    cursor: pointer;
+    width: 250px;
+    color: #fff;
+    text-align: center;
+    background: #f10430;
+    border-radius: 10px;
+    left:195px;
+    top:430px;
+    outline: none;
+    border: 0 none;
+}
+#proTabDiv form input.proUser{top:39px;}
+#proTabDiv form input.proCompan{top:110px;}
+#proTabDiv form input.proPhone{top:181px;}
+#proTabDiv form textarea.addConten{
+    background:url('../img/fre_write.jpg') left top no-repeat;
+    overflow: auto;
+    top:252px;
+	height:126px;
+}
+.star{
+	position: absolute;
+	right:35px;
+	color:red;
+	font-size:16px;
+}
+.s1{top:55px;}
+.s2{top:200px;}
+.fre_top.pro{
+    height:32px;
+}
+#proTabDiv form input.selected{
+    background-color: #fafafa;
+    border:1px solid #c8c8c8
+}
+.fre_top.pro .fre_top_con span{
+    line-height: 32px;
+}
+.tab1_notice.pro{
+    color: #d02730;
+    line-height: 14px;
+	position: relative;
+    top:-2px;
+    *top:2px;
+}
+.coFormC.pro{position: relative}
+.erroSpan{ margin-left: 65px;
+    line-height: 42px;
+    color:#d02730;
+    font-size: 12px;
+    display: none;
+}
+.erroSpan.name{position: absolute;top:41px;left:430px;}
+.erroSpan.phone{position: absolute;top:185px;left:430px;}
+.erroSpan.add{position: absolute;top:254px;left:430px;}
+#protab4{position: relative}
+.star.add{position: absolute;top:310px;}
+.send_bg_cont{
+	width:270px;
+	height:350px;
+	background: #d20001;
+	overflow: hidden;
+	margin-top:39px;
+	margin-left:40px;
+	position: relative;
+}
+.send_bg_cont p{
+	text-align: center;
+	width:100%;
+	height:70px;
+	line-height: 70px;
+	font-size:20px;
+	color:#FFFFFF;
+}
+.send_bg_cont .button{
+	width:155px;
+	height:40px;
+	position: absolute;
+	background:#FFFFFF;
+	line-height: 40px;
+	font-size:14px;
+	text-align: center;
+	color:#d20001;
+	border-radius: 10px;
+	top:130px;
+	left:60px;
+	z-index: 1;
+}
+.send_bg_cont .hand{
+	width:38px;
+	height:44px;
+	position: absolute;
+	top:228px;
+	left:156px;
+	background: url(../img/sendmes_hand.png) center center no-repeat;
+	z-index: 2;
+}
+/*-- 提交留言 --End*/
+
+/******************************************** 仪器仪表 **********************************************/
+.comm_btn{
+	background: url(../img/button.png) no-repeat;
+    width: 140px;
+    height: 45px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    background-position: 0px -250px;
+}
+.comm_btn:hover{
+	background:url(../img/button.png) no-repeat;
+    background-position: 0px -349px;
+    color:#d81e06;
+}
+.comm_btn .free_use_cont{
+	display: block;
+	width: 100%;
+	text-align: center;
+	float: left;
+	height: 42px;
+	line-height: 42px;
+	font-size:16px;
+	color:#FFFFFF;
+}
+.comm_btn:hover .free_use_cont{
+	color:#d81e06;
+}
+.banner_cont{
+	width:100%;
+	min-width: 1200px;
+	max-width: 1440px;
+	margin:0 auto;
+	height: 475px;
+}
+.banner_left_cont{
+	overflow: hidden;
+	width:736px;
+	height:475px;
+	background: url(../img/index_yqyb/banner_left_bg.png) center center no-repeat;
+}
+.banner_freeBtn{
+	width:150px;
+	height:45px;
+	margin-top:375px;
+	margin-left:275px;
+	background: url(../img/index_yqyb/banner_freebtn.png) center center no-repeat;
+	cursor: pointer;
+}
+.banner_freeBtn a{
+	display: block;
+	width:100%;
+	height: 100%;
+}
+/*-- 针对仪器仪表行业特性设计开发 --Start*/
+.zdyq{ height: 750px;}
+.zdyq_cont{ 
+	overflow: hidden;
+	width:100%;
+}
+.zdyq_dl{
+	display: block;
+	width:200px;
+	height: 200px;
+	float: left;
+	margin-bottom: 50px;
+	border-radius: 10px;
+}
+.zdyq_dl dt{
+	display: block;
+	width:200px;
+	height: 160px;
+	overflow: hidden;
+}
+.zdyq_dl_bg{
+	width:152px;
+	height: 131px;
+	overflow: hidden;
+	margin: 15px auto;
+}
+.zdyq_cont .dl1 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl1.png) top center no-repeat;
+}
+.zdyq_cont .dl2 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl2.png) top center no-repeat;
+}
+.zdyq_cont .dl3 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl3.png) top center no-repeat;
+}
+.zdyq_cont .dl4 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl4.png) top center no-repeat;
+}
+.zdyq_cont .dl5 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl5.png) top center no-repeat;
+}
+.zdyq_cont .dl6 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl6.png) top center no-repeat;
+}
+.zdyq_cont .dl7 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl7.png) top center no-repeat;
+}
+.zdyq_cont .dl8 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl8.png) top center no-repeat;
+}
+.zdyq_cont .dl9 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl9.png) top center no-repeat;
+}
+.zdyq_cont .dl10 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl10.png) top center no-repeat;
+}
+.zdyq_cont .dl11 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl11.png) top center no-repeat;
+}
+.zdyq_cont .dl12 .zdyq_dl_bg{
+	background: url(../img/index_yqyb/zdyq_dl12.png) top center no-repeat;
+}
+.zdyq_dl:hover dd{ color:#d30302; }
+.zdyq_dl:hover .zdyq_dl_bg{ background-position: bottom center; }
+.zdyq_dl dd{
+	display: block;
+	width:200px;
+	height: 40px;
+	line-height: 40px;
+	color: #333333;
+	text-align: center;
+	font-size: 18px;
+}
+/*-- 针对仪器仪表行业特性设计开发 --End*/
+
+/*-- 仪器仪表管理系统 让企业高效运转 --Start */
+.sszk{
+	background: url(../img/index_yqyb/sszk_bg.jpg) center center no-repeat;
+	height: 1100px;
+	overflow: hidden;
+}
+.sszk div strong{
+	color:#FFFFFF;
+}
+.sszk_cont{
+	height:770px;
+	width:1100px;
+	margin:0 auto;
+}
+.sszk_cont dl{
+	width:467px;
+	height:180px;
+	float: left;
+	margin-top:20px;
+	background: rgba(0,0,0,0.1);
+	border: 1px solid #AAAAAA;
+}
+.sszk_cont .left{
+	margin-left: 160px;
+}
+.sszk_cont .bottom{
+	margin-top:70px;
+}
+.sszk_cont dl dt{
+	display: block;
+	float: left;
+	width:180px;
+	height:180px;
+	line-height: 180px;
+}
+.sszk_cont dl dt p{
+	display: block;
+	font-size:21px;
+	width: 145px;
+	color:#FFFFFF;
+	padding:60px 15px;
+	line-height:45px;
+	text-indent: 1em;
+}
+.sszk_cont .dt1{background: #cc2f2e;}
+.sszk_cont .dt2{background: #147ac1;}
+.sszk_cont .dt3{background: #e77403;}
+.sszk_cont .dt4{background: #5bc222;}
+.sszk_cont .dt5{background: #3ec2c7;}
+.sszk_cont .dt6{background: #895af2;}
+.sszk_cont dl dd{
+	display: block;
+	float: left;
+	width:226px;
+	height:60px;
+	line-height: 20px;
+	color:#FFFFFF;
+	font-weight: 500;
+	font-size:14px;
+	padding: 60px 30px 60px 30px;
+}
+.sszk_cont dl:hover dd{
+	background: rgba(0,0,0,0.3);
+	background: rgb(0,0,0)\9;
+	filter:alpha(opacity=40)\9;   
+  	-moz-opacity:0.4\9;     
+  	opacity: 0.4\9;
+}
+.sszk_btm{
+	width:380px;
+	height: 45px;
+	margin: 50px auto;
+}
+/*-- 仪器仪表管理系统让企业高效运转 --End */
+
+/*-- 仪器仪表管理系统 · 亮点功能 --Start */
+.goods_tedi{
+	height:480px;
+}
+.goods_tedi .box_father{
+    width: 1000px;
+    left:50%;
+    margin-left:-500px;
+	position: absolute;
+}
+.goods_tedi .box_father .box {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+.goods_tedi .box_father .box li {
+    width: 20%;
+    *width: 20%;
+    height: 480px;
+    float: left;
+    position: relative;
+    top: -480px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.goods_tedi .box li .first {
+    height: 478px;
+    margin: 0px 10px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.goods_tedi .box li .first .text {
+    padding: 0px 16px;
+    height: 100%;
+    position: relative;
+    box-shadow: 1px 1px 2px #ddd;
+    background: #ECECEC;
+    z-index: 2;
+}
+
+.goods_tedi .box li .first .ico {
+    width: 40px;
+    height: 40px;
+    display: block;
+    left: 20px;
+    top: 60px;
+    background: url(../img/goods.png) no-repeat;
+    position: absolute;
+}
+
+.goods_tedi .box li .first .icoo1 {
+    background-position: 0px 0px
+}
+
+.goods_tedi .box li .first .icoo2 {
+    background: url(../img/index_yqyb/tedi1.png) no-repeat center center;
+}
+
+.goods_tedi .box li .first .icoo3 {
+    background: url(../img/index_yqyb/tedi2.png) no-repeat center center;
+}
+
+.goods_tedi .box li .first .icoo4 {
+    background: url(../img/index_yqyb/tedi3.png) no-repeat center center;
+}
+
+.goods_tedi .box li .first .icoo5 {
+    background: url(../img/index_yqyb/tedi4.png) no-repeat center center;
+}
+
+.goods_tedi .box li .first .icoo6 {
+    background: url(../img/index_yqyb/tedi5.png) no-repeat center center;
+}
+
+.goods_tedi .box li .first dl {
+    position: relative;
+    top: 130px;
+}
+
+.goods_tedi .box li .first dt {
+    height: 75px;
+    line-height: 75px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.goods_tedi .box li .first dd {
+    width: 100%;
+    height: 220px;
+    line-height: 22px;
+    font-size: 12px;
+    overflow: hidden;
+    color: #666;
+}
+.goods_tedi .box li .first .goods_tv dd{
+    color: white;
+}
+.goods_tedi .box li .first .t {
+    width: 19px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    top: 190px;
+}
+
+.goods_tedi .box li .first .goods_po {
+    width: 100%;
+    height: 100%;
+    background: #D20001;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+}
+
+.goods_tedi .box li .first:hover .goods_po {
+    z-index: 3;
+}
+
+.goods_tedi .box li .first .goods_po .goods_tv {
+    margin: 0px 16px;
+}
+
+.goods_tedi .box li .first .goods_po dl {
+    top: 90px;
+}
+
+.goods_tedi .box li .first .goods_po dt {
+    color: #fff;
+}
+
+.goods_tedi .box li .first .goods_po dl {
+    color: #fff;
+}
+
+.goods_tedi .box li .first .goods_po .t {
+    top: 150px;
+    background: #FFF;
+}
+
+.goods_tedi ol {
+    padding: 45px 0;
+    height: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.goods_tedi ol li {
+    width: 9px;
+    height: 9px;
+    margin: 0 5px;
+    display: inline-block;
+    background: url(../img/goods.png) no-repeat -1px -600px;
+    cursor: pointer;
+    *display: inline;
+    *zoom: 1;
+}
+
+.goods_tedi ol li.active {
+    background-position: 0px -700px;
+}
+/*-- 仪器仪表管理系统 · 亮点功能 --End */
+
+
+/*-- 为什么选择智邦国际仪器仪表管理系统 --Start */
+.rxsc{
+	height: 1000px;
+	background: url(../img/rxsc_bg.jpg) center center no-repeat;
+}
+.rxsc dl{
+	display: block;
+	width:260px;
+	height:300px;
+	float:left;
+	margin: 20px 20px;
+	transition: all ease 0.3s;
+}
+.rxsc dl:hover{
+	transition: all ease 0.3s;
+	transform:scale(1.1,1.1);
+    -ms-transform:scale(1.1,1.1); /* IE 9 */
+    -webkit-transform:scale(1.1,1.1); /* Safari and Chrome */
+   box-shadow: #555 0px 0px 15px 2px;
+}
+.rxsc dl:hover dd{
+	color:#FFFFFF;
+	background: #d0111b;
+}
+.rxsc dl dt{
+	width:260px;
+	height: 240px;
+}
+.rxsc .dl1 dt{ background: url(../img/index_yqyb/rxsc_dl1.jpg) center center no-repeat; }
+.rxsc .dl2 dt{ background: url(../img/index_yqyb/rxsc_dl2.jpg) center center no-repeat; }
+.rxsc .dl3 dt{ background: url(../img/index_yqyb/rxsc_dl3.jpg) center center no-repeat; }
+.rxsc .dl4 dt{ background: url(../img/index_yqyb/rxsc_dl4.jpg) center center no-repeat; }
+.rxsc .dl5 dt{ background: url(../img/index_yqyb/rxsc_dl5.jpg) center center no-repeat; }
+.rxsc .dl6 dt{ background: url(../img/index_yqyb/rxsc_dl6.jpg) center center no-repeat; }
+.rxsc .dl7 dt{ background: url(../img/index_yqyb/rxsc_dl7.jpg) center center no-repeat; }
+.rxsc .dl8 dt{ background: url(../img/index_yqyb/rxsc_dl8.jpg) center center no-repeat; }
+.rxsc dl dd{
+	width:260px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size:16px;
+	color:#333333;
+	background: #FFFFFF;
+}
+/*-- 为什么选择智邦国际仪器仪表管理系统 --End */
+
+/*-- 荣誉资质 --Start */
+.about_zizi {
+    width: 100%;
+    background: #FFFFFF;
+    padding-bottom: 85px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    height: 700px;
+}
+.about_zizi .box {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50px;
+}
+.about_zizi .box .first {
+    margin: 0 100px;
+    overflow: hidden;
+    position: relative;
+}
+.about_zizi .box .first ul {
+    width: 100%;
+    height: 390px;
+    position: relative;
+}
+.about_zizi .box .first li {
+    width: 20%;
+    *width: 19.98%;
+    float: left;
+}
+.about_zizi .box .first li img {
+    width: 100%;
+    *width: 98%;
+    height: auto;
+    border: solid 2px #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.about_zizi .box .first li.active img {
+    border-color: #DD0817;
+}
+.about_zizi .box .left, .about_zizi .box .right {
+    width: 36px;
+    height: 36px;
+    display: block;
+    background: url(../img/about.png) no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -19px;
+}
+.about_zizi .box .left {
+    left: 10px;
+    background-position: 0px -400px;
+}
+.about_zizi .box .right {
+    right: 10px;
+    background-position: 0px -605px;
+}
+.about_zizi .box .left:hover {
+    background-position: 0px -505px;
+}
+.about_zizi .box .right:hover {
+    background-position: 0px -705px;
+}
+.about_zizi .p {
+    width: 100%;
+    height: 50px;
+    line-height: 100px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+/***  证书轮播 */
+#d_tab29 ul, #d_tab29 li { margin: 0; padding: 0; list-style: none }
+#d_tab29 img { border: 0; vertical-align: top }
+#d_tab29 { position: relative; height: 400px;   text-align: left }
+#d_tab29 .d_img { position: relative; margin: 0 auto; width: 1000px; height: 100% }
+#d_tab29 .d_img li { position: absolute; display: none; z-index: 0 }
+#d_tab29 .d_img .cont{ width:100%; height:87px; background:rgba(0,0,0,0.5); position:absolute; bottom:0px; left:0px; z-index:99999;}
+#d_tab29 .d_img li img { width: 100%;
+	border:1px solid #888; 
+	/*-webkit-box-shadow:0 0 14px 2px #555555;
+	-moz-box-shadow:0 0 14px 2px #555555;  
+	box-shadow:0 0 14px 2px #555555; */
+}
+#d_tab29 .d_img li.d_pos1 { display: block; width: 400px; left: 0; top: 60px; z-index: 1 }
+#d_tab29 .d_img li.d_pos2 { display: block; width: 450px; left: 10%; top: 40px; z-index: 2 }
+#d_tab29 .d_img li.d_pos3 { display: block; width: 500px; left: 30%; top: 20px; z-index: 3 }
+#d_tab29 .d_img li.d_pos4 { display: block; width: 450px; right: 10%; top: 40px; z-index: 2 }
+#d_tab29 .d_img li.d_pos5 { display: block; width: 400px; right: 0; top: 60px; z-index: 1 }
+#d_tab29 .d_menu { position: absolute; bottom: -70px; width: 100%; text-align: center }
+#d_tab29 .d_menu li {display:none;}
+#d_tab29 .d_menu li.d_select { display: inline-block; zoom: 1; *display:inline; cursor: pointer;color:#fff}
+#d_tab29 .d_menu li.d_select a{color:#333;}
+#d_tab29 .d_next, #d_tab29 .d_prev{
+    display: block;
+    width:40px;
+    height:40px;
+    top: 140px;
+    z-index: 10;
+    cursor: pointer ;
+    background: url("../img/button.png");
+}
+
+#d_tab29 .d_prev {
+    position: absolute;
+    left: 9%;
+    background-position: -150px -449px;
+}
+
+#d_tab29 .d_next {
+    position: absolute;
+    right: 9%;
+    background-position: -150px -499px;
+}
+
+.about_lianxi .box .BMapLib_nav_tab_content li{width:100%;}
+
+@media only screen and (min-width: 320px) and (max-width: 1200px) {
+    .about_jianjie .box .right .first .text .about_con p {
+        font-size: 12px;
+    }
+    .about_licheng .box .about_list .first {
+        width: 837px;
+        margin: 0px auto;
+    }
+
+}
+/***  证书轮播 */
+/*-- 荣誉资质 --End */
+
+/*-- 成功案例 --Start */
+.succ_exam{
+	width:100%;
+	height:780px;
+	background: url(../img/ifa/bg_cgal.png) center center no-repeat;
+}
+.succ_cont{
+	width:1000px;
+	height:780px;
+	margin:0 auto;
+	position:relative;
+	background: url(../img/succ_line.png) 135px 80px no-repeat;
+}
+.succ_cont .succ_center{
+	width:260px;
+	height:260px;
+	position: absolute;
+	top:267px;
+	left:369px;
+	background: url(../img/succ_center.png) center center no-repeat;
+	transform-style: preserve-3d;
+}
+.succ_cont .succ_center:hover{
+	transition: 1s;
+	-moz-transition: 1s;
+	-moz-transition: 1s;
+	transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+}
+.succ_cont ul{
+	width:220px;
+	display: none;
+	position:absolute;
+}
+.succ_cont ul li{
+	height: 26px;
+	line-height: 26px;
+	font-size:12px;
+	color:#FFFFFF;
+}
+.succ_cont .succ_ul1{
+	left:107px;
+	top:55px;
+	list-style: url(../img/succ_lis1.png);
+}
+.succ_cont .succ_ul2{
+	left:5px;
+	top:300px;
+	list-style: url(../img/succ_lis2.png);
+}
+.succ_cont .succ_ul3{
+	left:80px;
+	top:530px;
+	list-style: url(../img/succ_lis3.png);
+}
+.succ_cont .succ_ul4{
+	left:420px;
+	top:655px;
+	list-style: url(../img/succ_lis1.png);
+}
+.succ_cont .succ_ul5{
+	left:811px;
+	top:425px;
+	list-style: url(../img/succ_lis5.png);
+}
+.succ_cont .succ_ul6{
+	left:790px;
+	top:175px;
+	list-style: url(../img/succ_lis6.png);
+}
+.succ_cont .succ_ul7{
+	left:590px;
+	top:25px;
+	list-style: url(../img/succ_lis7.png);
+}
+/*-- 成功案例 --End */

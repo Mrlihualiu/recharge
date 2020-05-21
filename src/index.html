@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link id="css3" rel="stylesheet" type="text/css" w3c="css/css3.css" ie="css/css3.css" />
+		<script src="js/respond.src.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/instrument_entrance.css" />
+	</head>
+	<body>
+		<div class="recr_td sszk" style="background: url(img/rxsc_bg.jpg);">
+			<div class="recr_title">
+				<div>
+					<strong>晟立仪器设备管理系统</strong>
+				</div>
+			</div>
+			<div class="box">
+				<div class="sszk_cont">
+					<dl onclick="sy()">
+						<dt class="dt1">
+							<p>首页</p>
+						</dt>
+						<dd>
+							首页信息
+						</dd>
+					</dl>
+					<dl class="left"  onclick="clickCustomer()">
+						<dt class="dt2">
+							<p>设备入库</p>
+						</dt>
+						<dd>
+							仪器设备的购置，删除，收集相关仪器设备资料。
+						</dd>
+					</dl>
+					<dl class="bottom" onclick="clickEquipment()">
+						<dt class="dt3">
+							<p>调试设备</p>
+						</dt>
+						<dd>
+						输入各种参数，调试设备，让设备达到最佳状态。
+						</dd>
+					</dl>
+					<dl class="left bottom" onclick="clickManage()">
+						<dt class="dt4">
+							<p>设备管理</p>
+						</dt>
+						<dd>
+							仪器的保养工作落实到具体人员，明确规定谁操作谁负责保养的职责，定期进行检查。
+						</dd>
+					</dl>
+					<dl class=" bottom" onclick="clickStorage()">
+						<dt class="dt5">
+							<p>维修与报废</p>
+						</dt>
+						<dd>
+							仪器设备出现损坏、老化、精确度下降、发生故障等一系列情况，停止使用并进行维修处理，维修不了的仪器进行报废处理。
+						</dd>
+					</dl>
+					
+					<dl class="left bottom" onclick="aboutUs()">
+						<dt class="dt6">
+							<p>关于我们</p>
+						</dt>
+						<dd>
+							关于我们信息
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<script src="layui/layui.js"></script>
+		<script type="text/javascript">
+			function clickCustomer() {
+				window.open("customer.html", "_blank")
+			}
+
+			function clickEquipment() {
+				window.open("equipment.html", "_blank")
+			}
+
+			function clickManage() {
+				window.open("manage.html", "_blank")
+			}
+
+			function clickStorage() {
+				window.open("bar-y-category.html", "_blank")
+			}
+
+			function aboutUs() {
+				layui.use('layer', function() {
+					var layer = layui.layer;
+					layer.open({
+						title: '关于我们',
+						area: ['600px', '450px'],
+						content: '<h1>晟立仪器设备管理系统</h1>'
+					});
+				});
+
+			}
+			function sy() {
+				layui.use('layer', function() {
+					var layer = layui.layer;
+					layer.open({
+						title: '首页信息',
+						area: ['600px', '450px'],
+						content: '<h1>晟立仪器设备管理系统</h1>'
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

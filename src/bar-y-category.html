@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<style type="text/css">
+			.layui-form-label {
+				width: 100px;
+				padding: 9px 5px;
+			}
+		</style>
+	</head>
+	<body class="layui-layout-body" style="height: 100%; margin: 0">
+		
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header" style="background: #eee;">
+				<div class="layui-logo"><img src="img/equipment.png" style="width: 25px;" />&nbsp;维修与报废</div>
+			</div>
+			<div class="layui-body" style="left: 0;padding: 20px;">
+				<div id="container" style="height: 40%"></div>
+				<div id="demoTable">
+					<div class="layui-input-inline">
+						<label class="layui-form-label" style="width: 200px;">仪器编号：</label>
+						<input type="text" id="tj" class="layui-input" style="width: 200px;"></div>
+					<button data-type="reload" type="button" class="layui-btn layui-btn-primary">查询</button>
+					<button id="xinzeng" type="button" class="layui-btn">新增</button>
+					<button type="button" class="layui-btn layui-btn-normal" data-type="delCheckData">删除</button>
+				</div>
+				<table class="layui-hide" id="test3" lay-filter="test3">
+
+				</table>
+			</div>
+		</div>
+			</body>
+			<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript">
+			function getsj(){
+			debugger;
+			var wxbfData = localStorage.getItem("wxbfData");
+			if(wxbfData!=undefined&&wxbfData!=null&&wxbfData!=""){
+				wxbfData = JSON.parse(wxbfData);
+				var tj = $("#tj").val().trim();
+				if(tj!=null&&tj!=""){
+					wxbfData = wxbfData.filter(function(obj) {
+					  return obj.xh == tj;
+					})
+				}
+				return wxbfData;
+			}else{
+				return [];
+			}
+		}
+		var sjTable;
+		layui.use('table', function() {
+			var table = layui.table,laypage = layui.laypage;
+			 //不显示首页尾页
+			  laypage.render({
+			    elem: 'demo4'
+			    ,count: 100
+			    ,first: false
+			    ,last: false
+			  });
+			sjTable = table.render({
+			    elem: '#test3'
+			    ,data:getsj()
+			    ,title: '用户数据表'
+			    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+			      layout: ['count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+			      
+			    }
+			    ,height: 400 
+			    ,cols: [[
+			      {type:'checkbox'}
+			      ,{field:'xh', title:'仪器编号', sort: true, edit: 'text'}
+			      ,{field:'mc', title:'操作人',  edit: 'text'}
+			      ,{field:'cj', title:'报废/维修',  edit: 'text'}
+			      ,{field:'gg', title:'原因', edit: 'text'}
+			      ,{field:'cz', title:'操作时间',  edit: 'text'}
+			    ]]
+			  });
+			  
+			//监听单元格编辑
+			table.on('edit(test3)', function(obj) {
+				var value = obj.value //得到修改后的值
+					,
+					data = obj.data //得到所在行所有键值
+					,
+					field = obj.field; //得到字段
+			});
+			
+			
+			var $ = layui.$, active = {
+			    reload: function(){
+			      //执行重载
+			      table.reload('test3', {
+			        page: {
+			          curr: 1 //重新从第 1 页开始
+			        }
+			        ,data: getsj()
+			      }, 'data');
+			    },
+			     delCheckData: function(){ //获取选中数据
+			      var checkStatus = table.checkStatus('test3')
+			      ,data = checkStatus.data;
+			      var wxbfData = localStorage.getItem("wxbfData");
+			      wxbfData = JSON.parse(wxbfData);
+			      
+			      wxbfData = wxbfData.filter(function(obj) {
+					  return !(obj.id == data[0].id);
+					})
+			      localStorage.setItem("wxbfData",JSON.stringify(wxbfData));
+			      active["reload"]();
+			      layer.alert('删除成功');
+			    }
+			};
+			
+			  $('#demoTable .layui-btn').on('click', function(){
+			    var type = $(this).data('type');
+			    active[type] ? active[type].call(this) : '';
+			  });
+			$("#xinzeng").click(function() {
+
+				layer.open({
+					type: 1,
+					title: "<img src='img/add.png' style='width: 25px;' />&nbsp;维护和保养",
+					area: ['500px', '400px'],
+					content: $('#xznr'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+					btn: ['确定', '关闭']
+					  ,yes: function(index, layero){
+					    //按钮【按钮一】的回调
+				    	var xh = $("input[name='xh']").val();
+				    	var mc = $("input[name='mc']").val();
+				    	var cj= $("input[name='cj']").val();
+				    	var gg= $("input[name='gg']").val();
+				    	var cz= $("input[name='cz']").val();
+				    	var id =  ""+Math.ceil(Math.random()*10000000);
+				    	if(xh!=""&&xh!=null){
+				    		var wxbfData = localStorage.getItem("wxbfData");
+							if(wxbfData!=undefined&&wxbfData!=null&&wxbfData!=""){
+								wxbfData = JSON.parse(wxbfData);
+								wxbfData.push({xh:xh,mc:mc,cj:cj,gg:gg,cz:cz,id:id});
+								localStorage.setItem("wxbfData",JSON.stringify(wxbfData));
+							}else{
+								wxbfData = [{xh:xh,mc:mc,cj:cj,gg:gg,cz:cz,id:id}];
+								localStorage.setItem("wxbfData",JSON.stringify(wxbfData));
+								
+							}
+							active["reload"]();
+				    	}else{
+				    		 layer.alert('请填写仪器编号');
+				    		return;
+				    	}
+				    	
+				    	$("input[name='xh']").val("");
+				    	$("input[name='mc']").val("");
+				    	$("input[name='cj']").val("");
+				    	$("input[name='gg']").val("");
+				    	$("input[name='cz']").val("");
+						layer.close(index);
+					  }
+					  ,btn2: function(index, layero){
+					    //按钮【按钮二】的回调
+					    
+					    //return false 开启该代码可禁止点击该按钮关闭
+					  }
+					  ,cancel: function(){ 
+					    //右上角关闭回调
+					    
+					    //return false 开启该代码可禁止点击该按钮关闭
+					  }
+				});
+			})
+			
+		});
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = null;
+			option = {
+				title: {
+					text: '入库及报废仪器',
+					subtext: '数据来自分析'
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'shadow'
+					}
+				},
+				legend: {
+					data: ['维修', '报废']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis: {
+					type: 'value',
+					boundaryGap: [0, 0.01]
+				},
+				yAxis: {
+					type: 'category',
+					data: [ '其它','水准仪', '水准仪', '水准仪', '水准仪', '水准仪', '水准仪']
+				},
+				series: [{
+						name: '入库',
+						type: 'bar',
+						data: [5,18, 23, 29, 10, 13, 63]
+					},
+					{
+						name: '报废',
+						type: 'bar',
+						data: [2,13, 27, 22, 19, 15, 43]
+					}
+				]
+			};;
+			if (option && typeof option === "object") {
+				myChart.setOption(option, true);
+			}
+		</script>
+<div id="xznr" class="layui-form" style="padding: 10px;display: none;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">仪器编号：</label>
+			<div class="layui-input-block">
+				<input type="text" name="xh" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">操作人：</label>
+			<div class="layui-input-block">
+				<input type="text" name="mc" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">报废/维修：</label>
+			<div class="layui-input-block">
+				<input type="text" name="cj" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">原因：</label>
+			<div class="layui-input-block">
+				<input type="text" name="gg" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">操作时间：</label>
+			<div class="layui-input-block">
+				<input type="text" name="cz" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+	</div>
+</html>

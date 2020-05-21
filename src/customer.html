@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>设备入库</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<style type="text/css">
+			.layui-form-label {
+				width: 100px;
+				padding: 9px 5px;
+			}
+		</style>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header" style="background: #eee;">
+				<div class="layui-logo"><img src="img/customer.png" style="width: 25px;" />&nbsp;设备入库</div>
+			</div>
+			<div class="layui-body" style="left: 0;padding: 20px;">
+				<div id="demoTable">
+					<div class="layui-input-inline">
+						<label class="layui-form-label" style="width: 200px;">编号：</label>
+						<input type="text" id="tj" class="layui-input" style="width: 200px;"></div>
+					<button data-type="reload" type="button" class="layui-btn layui-btn-primary">查询</button>
+					<button id="xinzeng" type="button" class="layui-btn">新增</button>
+					<button type="button" class="layui-btn layui-btn-danger" data-type="delCheckData">删除</button>
+				</div>
+				<table class="layui-hide" id="test3" lay-filter="test3">
+
+				</table>
+
+				<a href="pie-simple.html" class="layui-btn">用户分布视图</a>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		function getsj(){
+			debugger;
+			var sbxxData = localStorage.getItem("sbxxData");
+			if(sbxxData!=undefined&&sbxxData!=null&&sbxxData!=""){
+				sbxxData = JSON.parse(sbxxData);
+				var tj = $("#tj").val().trim();
+				if(tj!=null&&tj!=""){
+					sbxxData = sbxxData.filter(function(obj) {
+					  return obj.xh == tj;
+					})
+				}
+				return sbxxData;
+			}else{
+				return [];
+			}
+		}
+		var sjTable;
+		layui.use('table', function() {
+			var table = layui.table,laypage = layui.laypage;
+			 //不显示首页尾页
+			  laypage.render({
+			    elem: 'demo4'
+			    ,count: 100
+			    ,first: false
+			    ,last: false
+			  });
+			sjTable = table.render({
+			    elem: '#test3'
+			    ,data:getsj()
+			    ,title: '用户数据表'
+			    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+			      layout: ['count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+			      
+			    }
+			    ,height: 480 
+			    ,cols: [[
+			      {type:'checkbox'}
+			      ,{field:'xh', title:'编号', sort: true, edit: 'text'}
+			      ,{field:'mc', title:'仪器型号',  edit: 'text'}
+			      ,{field:'cj', title:'仪器品牌',  edit: 'text'}
+			      ,{field:'gg', title:'规格', edit: 'text'}
+			      ,{field:'cz', title:'数量',  edit: 'text'}
+			    ]]
+			  });
+			  
+			//监听单元格编辑
+			table.on('edit(test3)', function(obj) {
+				var value = obj.value //得到修改后的值
+					,
+					data = obj.data //得到所在行所有键值
+					,
+					field = obj.field; //得到字段
+			});
+			
+			
+			var $ = layui.$, active = {
+			    reload: function(){
+			      //执行重载
+			      table.reload('test3', {
+			        page: {
+			          curr: 1 //重新从第 1 页开始
+			        }
+			        ,data: getsj()
+			      }, 'data');
+			    },
+			     delCheckData: function(){ //获取选中数据
+			      var checkStatus = table.checkStatus('test3')
+			      ,data = checkStatus.data;
+			      var sbxxData = localStorage.getItem("sbxxData");
+			      sbxxData = JSON.parse(sbxxData);
+			      
+			      sbxxData = sbxxData.filter(function(obj) {
+					  return !(obj.id == data[0].id);
+					})
+			      localStorage.setItem("sbxxData",JSON.stringify(sbxxData));
+			      active["reload"]();
+			      layer.alert('删除成功');
+			    }
+			};
+			
+			  $('#demoTable .layui-btn').on('click', function(){
+			    var type = $(this).data('type');
+			    active[type] ? active[type].call(this) : '';
+			  });
+			$("#xinzeng").click(function() {
+
+				layer.open({
+					type: 1,
+					title: "<img src='img/add.png' style='width: 25px;' />&nbsp;新增用户",
+					area: ['500px', '400px'],
+					content: $('#xznr'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+					btn: ['确定', '关闭']
+					  ,yes: function(index, layero){
+					    //按钮【按钮一】的回调
+				    	var xh = $("input[name='xh']").val();
+				    	var mc = $("input[name='mc']").val();
+				    	var cj= $("input[name='cj']").val();
+				    	var gg= $("input[name='gg']").val();
+				    	var cz= $("input[name='cz']").val();
+				    	var id =  ""+Math.ceil(Math.random()*10000000);
+				    	if(xh!=""&&xh!=null){
+				    		var sbxxData = localStorage.getItem("sbxxData");
+							if(sbxxData!=undefined&&sbxxData!=null&&sbxxData!=""){
+								sbxxData = JSON.parse(sbxxData);
+								sbxxData.push({xh:xh,mc:mc,cj:cj,gg:gg,cz:cz,id:id});
+								localStorage.setItem("sbxxData",JSON.stringify(sbxxData));
+							}else{
+								sbxxData = [{xh:xh,mc:mc,cj:cj,gg:gg,cz:cz,id:id}];
+								localStorage.setItem("sbxxData",JSON.stringify(sbxxData));
+								
+							}
+							active["reload"]();
+				    	}else{
+				    		 layer.alert('请填写序号');
+				    		return;
+				    	}
+				    	
+				    	$("input[name='xh']").val("");
+				    	$("input[name='mc']").val("");
+				    	$("input[name='cj']").val("");
+				    	$("input[name='gg']").val("");
+				    	$("input[name='cz']").val("");
+						layer.close(index);
+					  }
+					  ,btn2: function(index, layero){
+					    //按钮【按钮二】的回调
+					    
+					    //return false 开启该代码可禁止点击该按钮关闭
+					  }
+					  ,cancel: function(){ 
+					    //右上角关闭回调
+					    
+					    //return false 开启该代码可禁止点击该按钮关闭
+					  }
+				});
+			})
+			
+		});
+	</script>
+	<script type="text/html" id="zizeng">
+		{{d.LAY_TABLE_INDEX+1}}
+</script>
+	<div id="xznr" class="layui-form" style="padding: 10px;display: none;">
+		<div class="layui-form-item">
+			<label class="layui-form-label">编号：</label>
+			<div class="layui-input-block">
+				<input type="text" name="xh" lay-verify="title" autocomplete="off"  class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称：</label>
+			<div class="layui-input-block">
+				<input type="text" name="gg" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">仪器型号：</label>
+			<div class="layui-input-block">
+				<input type="text" name="mc" lay-verify="title" autocomplete="off"  class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">仪器品牌：</label>
+			<div class="layui-input-block">
+				<input type="text" name="cj" lay-verify="title" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">数量：</label>
+			<div class="layui-input-block">
+				<input type="text" name="cz" lay-verify="title" autocomplete="off"  class="layui-input">
+			</div>
+		</div>
+	</div>
+</html>

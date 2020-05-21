@@ -1,88 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>登录界面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<style>
+			body{color:#fff; font-family:"微软雅黑"; font-size:14px;}
+	.wrap1{position:absolute; top:0; right:0; bottom:0; left:0; margin:auto }/*把整个屏幕真正撑开--而且能自己实现居中*/
+	.main_content{background:url(img/main_bg.png) repeat; margin-left:auto; margin-right:auto; text-align:left; float:none; border-radius:8px;}
+	.form-group{position:relative;}
+	.login_btn{display:block; background:#3872f6; color:#fff; font-size:15px; width:100%; line-height:50px; border-radius:3px; border:none; }
+	.login_input{width:100%; border:1px solid #3872f6; border-radius:3px; line-height:40px; padding:2px 5px 2px 30px; background:none;}
+	.icon_font{position:absolute; bottom:15px; left:10px; font-size:18px; color:#3872f6;}
+	.font16{font-size:16px;}
+	.mg-t20{margin-top:20px;}
+	@media (min-width:200px){.pd-xs-20{padding:20px;}}
+	@media (min-width:768px){.pd-sm-50{padding:50px;}}
+	#grad {
+	  background: -webkit-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Safari 5.1 - 6.0 */
+	  background: -o-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Opera 11.1 - 12.0 */
+	  background: -moz-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Firefox 3.6 - 15 */
+	  background: linear-gradient(#4990c1, #52a3d2, #6186a3); /* 标准的语法 */
+	}
+</style>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="./login.css" />
-</head>
-<body>
-  
-    <div class="div_top" >日常小修养护管理系统</div>
-    <div class="login">
-     
-        <div id="darkbannerwrap"></div>
-		 
-		<div id="darkbannerwrap"></div><input name="username" placeholder="用户名" id="userName"  type="text" >
-        <hr class="hr15">
-        <input name="password" placeholder="密码"  type="password" id="pass">
-        <hr class="hr15">
-        <input value="登录" style="width: 100%;" type="button" id="login_btn" onclick="Click()">
-        <hr class="hr20">
-    </div>
-</body>
-<script src="./page/js/jquery-2.2.0.min.js"></script>
-    <script src="./page/js/layer_v2.1/layer/layer.js"></script>
-    <script src="common.js"></script>
-    <script>
-        function Click(){
-            var user = $("#userName").val();
-            if(user == "决策人"){
-                window.location.href = 'html/index.html?num=0'
-            }else if(user == "user"){
-                window.location.href = 'html/index.html?num=1'
-            }else if(user == "非公安用户"){
-                window.location.href = 'html/index.html?num=2'
-            }else if(user == "管理员"){
-                window.location.href = 'html/index.html?num=3'
-            } else if (user == "admin") {
-                window.location.href = "page/index.html"  ;
-            }else{
-                alert("请输入正确的用户")
-            }
-					dataInit();
-        }
-		
-		
-		function dataInit(){
-			
-			var teacherList = [
-				{"id": "1","name":"张文","account":"zhangwen","pwd":"1"},
-				{"id": "2","name":"向国华","account":"xiangguohua","pwd":"1"},
-				{"id": "3","name":"李想","account":"lixiang","pwd":"1"},
-			];
-			localStorage.setItem("teacherList",JSON.stringify(teacherList));
-			
-			var stuList = [{"id": "1","name":"刘航","account":"liulang","pwd":"1"}];
-			var stuList = [{"id": "2","name":"刘嘉琦","account":"jiujiaqi","pwd":"1"}];
-			var stuList = [{"id": "3","name":"曾莹","account":"zengying","pwd":"1"}];
-			localStorage.setItem("stuList",JSON.stringify(stuList));
-			
-			var classList = [
-				{"id": "1","name":"初一1班","isPoint":"是"},
-				{"id": "2","name":"初一2班","isPoint":"否"},
-				{"id": "3","name":"初一3班","isPoint":"否"},
-				{"id": "4","name":"初二1班","isPoint":"是"},
-				{"id": "5","name":"初二3班","isPoint":"否"},
-				{"id": "6","name":"初三1班","isPoint":"是"},
-				{"id": "7","name":"初三2班","isPoint":"否"}
-			];
-			localStorage.setItem("classList",JSON.stringify(classList));
-			
-			
-			var cpuList = [
-				{"id": "1","name":"服务器（192.168.1.101）","isDie":"否"},
-				{"id": "2","name":"服务器（192.168.1.102）","isDie":"否"},
-				{"id": "3","name":"服务器（192.168.1.103）","isDie":"否"},
-				{"id": "4","name":"服务器（192.168.1.104）","isDie":"是"}
-			];
-			localStorage.setItem("cpuList",JSON.stringify(cpuList));
-			
-			var zyList = [
-				{"id": "1","name":"排序","des":"请用3种方法实现数组4,6,2,3,1的排序","zhipai":"初一1班","state":"未指派","handleState":"未处理","handleNote":"通过"}
-			];
-			console.log(JSON.stringify(zyList));
-			localStorage.setItem("zyList",JSON.stringify(zyList));
-		}			
-    </script>
+	</head>
+
+	<body style="background:url(img/bg.jpg) no-repeat;">
+
+		<div class="container wrap1" style="height:450px;">
+			<h2 class="mg-b20 text-center">晟立仪器设备管理系统</h2>
+			<div class="col-sm-8 col-md-5 center-auto pd-sm-50 pd-xs-20 main_content">
+				<p class="text-center font16">用户登录</p>
+				<form action="index.html">
+					<div class="form-group mg-t20">
+						<input type="text" class="login_input" id="Email1" placeholder="请输入用户名" />
+					</div>
+					<div class="form-group mg-t20">
+						<input type="password" class="login_input" id="Password1" placeholder="请输入密码" />
+					</div>
+					<div class="checkbox mg-b25">
+						<label>
+							<input type="checkbox" />记住我的登录信息
+						</label>
+					</div>
+					<button style="submit" class="login_btn">登 录</button>
+				</form>
+			</div>
+			<!--row end-->
+		</div>
+		<!--container end-->
+		<div style="text-align:center;">
+		</div>
+
+		<script type="text/javascript">
+			(function() {
+				var s = "_" + Math.random().toString(36).slice(2);
+				document.write('<div style="" id="' + s + '"></div>');
+				(window.slotbydup = window.slotbydup || []).push({
+					id: "u4923786",
+					container: s
+				});
+			})();
+		</script>
+		<script type="text/javascript" src="js/c.js" async="async" defer="defer"></script>
+	</body>
 </html>
