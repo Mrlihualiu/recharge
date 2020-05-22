@@ -21,7 +21,7 @@
 			<div class="layui-body" style="left: 0;padding: 20px;">
 				<div id="demoTable">
 					<div class="layui-input-inline">
-						<label class="layui-form-label" style="width: 200px;">仪器编号：</label>
+						<label class="layui-form-label" style="width: 200px;">设备编号：</label>
 						<input type="text" id="tj" class="layui-input" style="width: 200px;"></div>
 					<button data-type="reload" type="button" class="layui-btn layui-btn-primary">查询</button>
 					<button id="xinzeng" type="button" class="layui-btn">新增</button>
@@ -30,8 +30,8 @@
 				<table class="layui-hide" id="test3" lay-filter="test3">
 
 				</table>
-				<a href="pie-equ.html" class="layui-btn">仪器类型分布</a>
-				<a href="power.html" class="layui-btn">仪器开销视图</a>
+				<a href="pie-equ.html" class="layui-btn">设备类型分布</a>
+				<a href="power.html" class="layui-btn">设备开销视图</a>
 			</div>
 		</div>
 	</body>
@@ -75,7 +75,7 @@
 			    ,height: 480 
 			    ,cols: [[
 			      {type:'checkbox'}
-			      ,{field:'xh', title:'仪器编号', sort: true, edit: 'text'}
+			      ,{field:'xh', title:'设备编号', sort: true, edit: 'text'}
 			      ,{field:'mc', title:'负责人',  edit: 'text'}
 			      ,{field:'cj', title:'操作人',  edit: 'text'}
 			      ,{field:'gg', title:'维护项目', edit: 'text'}
@@ -151,7 +151,7 @@
 							}
 							active["reload"]();
 				    	}else{
-				    		 layer.alert('请填写仪器编号');
+				    		 layer.alert('请填写设备编号');
 				    		return;
 				    	}
 				    	
@@ -182,7 +182,7 @@
 </script>
 	<div id="xznr" class="layui-form" style="padding: 10px;display: none;">
 		<div class="layui-form-item">
-			<label class="layui-form-label">仪器编号：</label>
+			<label class="layui-form-label">设备编号：</label>
 			<div class="layui-input-block">
 				<input type="text" name="xh" lay-verify="title" autocomplete="off" class="layui-input">
 			</div>

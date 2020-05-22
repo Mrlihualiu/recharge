@@ -17,14 +17,12 @@
 				<div class="layui-logo"><img src="img/equipment.png" style="width: 25px;" />&nbsp;维修与报废</div>
 			</div>
 			<div class="layui-body" style="left: 0;padding: 20px;">
-				<div id="container" style="height: 40%"></div>
 				<div id="demoTable">
 					<div class="layui-input-inline">
-						<label class="layui-form-label" style="width: 200px;">仪器编号：</label>
+						<label class="layui-form-label" style="width: 200px;">设备编号：</label>
 						<input type="text" id="tj" class="layui-input" style="width: 200px;"></div>
 					<button data-type="reload" type="button" class="layui-btn layui-btn-primary">查询</button>
-					<button id="xinzeng" type="button" class="layui-btn">新增</button>
-					<button type="button" class="layui-btn layui-btn-normal" data-type="delCheckData">删除</button>
+					<button id="xinzeng" type="button" class="layui-btn">新增报废</button>
 				</div>
 				<table class="layui-hide" id="test3" lay-filter="test3">
 
@@ -73,7 +71,7 @@
 			    ,height: 400 
 			    ,cols: [[
 			      {type:'checkbox'}
-			      ,{field:'xh', title:'仪器编号', sort: true, edit: 'text'}
+			      ,{field:'xh', title:'设备编号', sort: true, edit: 'text'}
 			      ,{field:'mc', title:'操作人',  edit: 'text'}
 			      ,{field:'cj', title:'报废/维修',  edit: 'text'}
 			      ,{field:'gg', title:'原因', edit: 'text'}
@@ -149,7 +147,7 @@
 							}
 							active["reload"]();
 				    	}else{
-				    		 layer.alert('请填写仪器编号');
+				    		 layer.alert('请填写设备编号');
 				    		return;
 				    	}
 				    	
@@ -177,54 +175,10 @@
 			var dom = document.getElementById("container");
 			var myChart = echarts.init(dom);
 			var app = {};
-			option = null;
-			option = {
-				title: {
-					text: '入库及报废仪器',
-					subtext: '数据来自分析'
-				},
-				tooltip: {
-					trigger: 'axis',
-					axisPointer: {
-						type: 'shadow'
-					}
-				},
-				legend: {
-					data: ['维修', '报废']
-				},
-				grid: {
-					left: '3%',
-					right: '4%',
-					bottom: '3%',
-					containLabel: true
-				},
-				xAxis: {
-					type: 'value',
-					boundaryGap: [0, 0.01]
-				},
-				yAxis: {
-					type: 'category',
-					data: [ '其它','水准仪', '水准仪', '水准仪', '水准仪', '水准仪', '水准仪']
-				},
-				series: [{
-						name: '入库',
-						type: 'bar',
-						data: [5,18, 23, 29, 10, 13, 63]
-					},
-					{
-						name: '报废',
-						type: 'bar',
-						data: [2,13, 27, 22, 19, 15, 43]
-					}
-				]
-			};;
-			if (option && typeof option === "object") {
-				myChart.setOption(option, true);
-			}
 		</script>
 <div id="xznr" class="layui-form" style="padding: 10px;display: none;">
 		<div class="layui-form-item">
-			<label class="layui-form-label">仪器编号：</label>
+			<label class="layui-form-label">设备编号：</label>
 			<div class="layui-input-block">
 				<input type="text" name="xh" lay-verify="title" autocomplete="off" class="layui-input">
 			</div>
