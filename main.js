@@ -9,6 +9,7 @@ createWindow = () => {
     }
   })
   // 为应用加载index.html
+  // win.loadFile('./src/page/index.html')
   win.loadFile('./src/login.html')
   // 打开开发者工具
   win.webContents.openDevTools()
